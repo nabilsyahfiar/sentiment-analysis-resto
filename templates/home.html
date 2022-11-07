@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>SMS SPAM | HAM</title>
+	<title>Sentimen Analisis Deteksi</title>
 	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,7 @@
   <div class="jumbotron jumbotron-fluid p-y-3">
     <div class="container text-xs-center text-white">
       <h1 class="display-1 card-header" align="center" style="color:#2196F3;">Analisa Sentimen</h1>
-      <p class="lead" align="center"> Paste your SMS below to check whether it is spam or  not(ham).  </p>
+      <p class="lead" align="center">Lihat apakah kata yang anda masukkan positif atau negatif!</p>
     </div>
   </div>
 </header>
@@ -75,10 +75,10 @@
 <div class="container">
   <div class="well">
     <form action="{{ url_for('predict')}}" method="POST" align="center">
-      <p class="lead">Enter Your SMS below</p>
-      <textarea name="message" rows="4" cols="50" placeholder="Try: Hey baby, I love you!" required="required"></textarea>
+      <p class="lead">Masukkan kata disini</p>
+      <textarea name="message" rows="4" cols="50" placeholder="Masukkan kata disini" required="required"></textarea>
       <br/>
-      <input type="submit" class="btn-info btn" value="Let's Check" >
+      <input type="submit" class="btn-info btn" value="CEK" >
     </form>
   </div>
 </div>
