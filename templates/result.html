@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>hasil | Sentimen Analisis Deteksi</title>
    <!--  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> -->
    <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
 	<meta charset="UTF-8">
@@ -27,96 +27,78 @@
   background: #fcc316;
   text-transform: uppercase;
     margin-top: 10px;
-}
-.card-header{
-    width:100%;
-  color:#2196F3;
-    border-bottom:3px solid #BBB;
-    
-    font-family: 'Roboto', sans-serif;
-    padding:10px;
-    text-align: center;
-    margin-top:0px;
-    overflow:hidden;
-    -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-}
+  }
 
-.card {
-    background:#FFF;
-    display: block;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    float: none;
-    display: flex;
-    border:1px solid #AAA;
-    border-bottom:3px solid #BBB;
-    padding:10px;
-    margin-top:5em;
-    overflow:hidden;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    font-family: 'Roboto', sans-serif;
-    -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .card-header{
+      width:100%;
+    color:#2196F3;
+      border-bottom:3px solid #BBB;
+      
+      font-family: 'Roboto', sans-serif;
+      padding:10px;
+      text-align: center;
+      margin-top:0px;
+      overflow:hidden;
+      -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      
+  }
 
-}
+  .card {
+      background:#FFF;
+      display: block;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      float: none;
+      display: flex;
+      border:1px solid #AAA;
+      border-bottom:3px solid #BBB;
+      padding:10px;
+      margin-top:5em;
+      overflow:hidden;
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-family: 'Roboto', sans-serif;
+      -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-.card-body{
- margin:1em;   
-}
+  }
 
+  .card-body{
+  margin:1em;   
+  }
 	</style>
 
 </head>
 <body>
 
-	<header>
-		
-	
-
-
-
-<div class="jumbotron jumbotron-fluid p-y-3">
-      <div class="container text-xs-center text-white">
-        <a href="https://github.com/maladeep/sms-spam-ham-detector" target="_blank" title="View code at Github"> <ion-icon name="logo-github" size="large"></ion-icon></a>
-       
-        <h1 class="display-1 card-header" align="center" style="color:#2196F3;">Spam or Ham | SMS Detector  </h1>
-        <p class="lead" align="center"> Paste your SMS below to check whether it is spam or  not(ham).  </p>
-        
-      </div>
+<header>
+  <div class="jumbotron jumbotron-fluid p-y-3">
+    <div class="container text-xs-center text-white">
+      <h1 class="display-1 card-header" align="center" style="color:#2196F3;">Analisa Sentimen</h1>
+      <p class="lead" align="center">Lihat apakah kata yang anda masukkan positif atau negatif!</p>
     </div>
-
-
-
-
-
+  </div>
 </header>
 
+<p style="font-size:30;text-align: center;" class="lead"><b> <u>Hasil </u></b></p>
+<div class="results">
+  
+{% if prediction == 1%}
+<h2 style="color:red;" align="center">Negative</h2>
+{% elif prediction == 0%}
+<h2 style="color:blue;" align="center">Positive</h2>
+{% endif %}
 
-
-	<p style="font-size:30;text-align: center;" class="lead"><b> <u>Result </u></b></p>
-	<div class="results">
-
-
-		
-	{% if prediction == 1%}
-	<h2 style="color:red;" align="center">Negative</h2>
-	{% elif prediction == 0%}
-	<h2 style="color:blue;" align="center">Positive</h2>
-	{% endif %}
-
-	</div>
+</div>
 
 <div class="form-row text-center">
-    <div class="col-12">
-         <a href="https://sms-spam-ham-detector.herokuapp.com"> <button type="submit" class="btn btn-primary">Check Again</button> </a>
-    </div>
- </div>
+  <div class="col-12">
+    <a href="../"> <button type="submit" class="btn btn-primary">CEK ULANG</button> </a>
+  </div>
+</div>
 
-
-  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 
 </body>
 </html>
